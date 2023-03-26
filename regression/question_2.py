@@ -11,6 +11,7 @@
 
 import tensorflow as tf
 import numpy as np
+from keras.saving.save import load_model
 
 
 def regression_model():
@@ -39,7 +40,7 @@ if __name__ == '__main__':  # Run and save your model
     my_model.save(model_name)
 
     # Reload the saved model
-    saved_model = tf.keras.models.load_model(model_name)
+    saved_model = load_model(model_name)
 
     # Show the model architecture
     saved_model.summary()

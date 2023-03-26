@@ -1,5 +1,7 @@
 import tensorflow as tf
 import numpy as np
+from keras import Sequential
+from keras.layers import Dense
 
 
 def regression_model():
@@ -8,8 +10,8 @@ def regression_model():
     y_array = np.array([-5, 5, 15, 25, 35, 45, 55, 65], dtype=int)
 
     # Define the model architecture
-    model = tf.keras.Sequential([
-        tf.keras.layers.Dense(units=1, input_shape=[1])
+    model = Sequential([
+        Dense(units=1, input_shape=[1])
     ])
 
     # Compile the model

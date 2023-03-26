@@ -11,6 +11,8 @@
 
 import tensorflow as tf
 import numpy as np
+from keras import Sequential
+from keras.saving.save import load_model
 
 
 def regression_model():
@@ -19,7 +21,7 @@ def regression_model():
     y_array = np.array([-5, 5, 15, 25, 35, 45, 55, 65], dtype=int)
 
     # Define the model architecture
-    model = tf.keras.Sequential([
+    model = Sequential([
         # YOUR CODE HERE
     ])
 
@@ -40,7 +42,7 @@ if __name__ == '__main__':  # Run and save your model
     my_model.save(model_name)
 
     # Reload the saved model
-    saved_model = tf.keras.models.load_model(model_name)
+    saved_model = load_model(model_name)
 
     # Show the model architecture
     saved_model.summary()
