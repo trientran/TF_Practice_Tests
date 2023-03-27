@@ -21,7 +21,7 @@ def regression_model():
     y_array = np.array([-5, 5, 15, 25, 35, 45, 55, 65], dtype=int)
 
     # Define the model architecture
-    model = Sequential([ ### note if tf.keras.mnist then must import
+    model = Sequential([
         # YOUR CODE HERE
     ])
 

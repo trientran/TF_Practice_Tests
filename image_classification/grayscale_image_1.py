@@ -4,8 +4,8 @@
 
 # Question:
 
-# Create a classifier for the MNIST dataset. The input shape should be 28x28 monochrome and the model should
-# classify 10 classes. Do not resize the data, and make sure your input layer accepts (28,28) as the input shape only.
+# Create a classifier for the MNIST dataset which includes black-and-white images of 10 digits (0-9). The input shape
+# should be 28x28 monochrome and the model should classify 10 classes.
 
 # Your task is to fill in the missing parts of the code block (where commented as "YOUR CODE HERE").
 
@@ -41,11 +41,15 @@ def my_model():
     model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
     # Define the early stopping callback
-    early_stop = EarlyStopping(monitor='val_accuracy', patience=1, verbose=1, min_delta=0.01, baseline=0.99)
+    early_stop = EarlyStopping(monitor='val_accuracy', patience=5, min_delta=0.01, verbose=1)
 
     # Train the model with the early stopping callback
-    model.fit(x_train.reshape(-1, 28, 28, 1), y_train, epochs=10,
-              validation_data=(x_test.reshape(-1, 28, 28, 1), y_test), callbacks=[early_stop])
+    model.fit(
+        x_train.reshape(-1, 28, 28, 1),
+        y_train,
+        epochs=10,
+        validation_data=(x_test.reshape(-1, 28, 28, 1), y_test),
+        callbacks=[early_stop])
 
     return model
 
