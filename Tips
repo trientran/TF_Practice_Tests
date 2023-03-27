@@ -1,5 +1,7 @@
 - import libs accordingly
 - they dont mark how you code, they mark the output only with respect to the required input shape
-- set epoch to 10-20 for image classification problems
+- set epoch to 10-20 for image classification problems and early callback patient to 3-5 so we know if our model is not performing well and fine-tune it
 - if you have to retrain the model, comment out the dataset downloading part to avoid redownloading
 - check Python packages tab, open Doucmentatoio tab if possible
+- in callback the mode is very important as it decide the logic to stop training
+- input shape is important and must match the required one
