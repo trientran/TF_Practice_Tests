@@ -15,16 +15,12 @@
 # Your task is to fill in the missing parts of the code block (where commented as "YOUR CODE HERE").
 
 import os
-import zipfile
-from urllib.request import urlretrieve
 
-import tensorflow as tf
 from keras import Sequential
 from keras.callbacks import EarlyStopping
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from keras.saving.save import load_model
 from keras.utils import image_dataset_from_directory, get_file
-from keras_preprocessing.image import ImageDataGenerator
 
 
 def binary_model():

@@ -1,10 +1,11 @@
 import json
 import os
 from urllib.request import urlretrieve
+
 import numpy as np
 from keras import Sequential
 from keras.callbacks import EarlyStopping
-from keras.layers import Embedding, GlobalAveragePooling1D, Dense, Dropout, Conv1D, MaxPooling1D, LSTM
+from keras.layers import Embedding, Dense, Dropout, Conv1D, MaxPooling1D, LSTM
 from keras.preprocessing.text import Tokenizer
 from keras.saving.save import load_model
 from keras.utils import pad_sequences

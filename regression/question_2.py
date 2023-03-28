@@ -9,8 +9,8 @@
 
 # Your task is to fill in the missing parts of the regression_model function (where commented as "YOUR CODE HERE").
 
-import tensorflow as tf
 import numpy as np
+import tensorflow as tf
 from keras.saving.save import load_model
 
 

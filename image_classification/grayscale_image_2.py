@@ -9,11 +9,10 @@
 
 # Your task is to fill in the missing parts of the code block (where commented as "YOUR CODE HERE").
 
-import tensorflow_datasets as tfds
 import tensorflow as tf
+import tensorflow_datasets as tfds
 from keras import Sequential
 from keras.callbacks import EarlyStopping
-from keras.datasets import mnist
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from keras.saving.save import load_model
 
