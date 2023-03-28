@@ -12,20 +12,20 @@ from keras.utils import pad_sequences
 
 
 def nlp_binary_model():
-    json_file = 'is-english.json'
+    json_file = 'language-classification.json'
     if not os.path.exists(json_file):
-        url = 'https://trientran.github.io/tf-practice-exams/is-english.json'
+        url = 'https://trientran.github.io/tf-practice-exams/language-classification.json'
         urlretrieve(url, json_file)
 
     max_length = 25
-    trunc_type = 'pre'
+    trunc_type = 'pre'  # Can be replaced with 'post'
     vocab_size = 500
-    padding_type = 'pre'
-    embedding_dim = 16
+    padding_type = 'pre'  # Can be replaced with 'post'
+    embedding_dim = 32
     oov_tok = "<OOV>"
 
     # Load the dataset
-    with open('is-english.json', 'r') as f:
+    with open(json_file, 'r') as f:
         datastore = json.load(f)
 
     # Extract the texts and labels
@@ -59,7 +59,7 @@ def nlp_binary_model():
 
     # Build the model
     model = Sequential([
-        Embedding(vocab_size, embedding_dim, input_length=max_length),
+        Embedding(input_dim=vocab_size + 1, output_dim=embedding_dim, input_length=max_length),
         Dropout(0.2),
         Conv1D(64, 5, activation='relu'),
         MaxPooling1D(pool_size=4),
@@ -70,7 +70,7 @@ def nlp_binary_model():
     # Compile the model
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-    # Define an early stopping callback
+    # Define an early stopping callback. Feel free to adjust the parameters' values if you want to fine-tune this model
     early_stop = EarlyStopping(monitor='val_accuracy', patience=5, min_delta=0.01, verbose=1)
 
     # Train the model

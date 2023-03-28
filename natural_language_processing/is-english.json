@@ -1,0 +1,806 @@
+[
+ {
+  "sentence": "Tôi không thể đợi đến cuối tuần tới.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I fiori nel giardino stanno sbocciando.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Ma couleur préférée est le bleu, et toi ?",
+  "is_english": 0
+ },
+ {
+  "sentence": "I wish I had more time to read.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Le chien aboie fort après le facteur.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Sono emozionato per la nuova stagione del mio programma preferito.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The sound of a crackling fire is so cozy.",
+  "is_english": 1
+ },
+ {
+  "sentence": "La pizza che ho mangiato ieri sera era deliziosa.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Il film che ho visto ieri sera era molto spaventoso.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Estoy emocionado por la nueva temporada de mi programa favorito.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Il tramonto qui è molto bello.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The smell of a home-cooked meal is so inviting.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I wish I could go on a vacation right now.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Tôi thích đi dạo trong công viên.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Quyển sách tôi đang đọc rất thú vị.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The leaves on the trees are changing colors.",
+  "is_english": 1
+ },
+ {
+  "sentence": "No puedo creer que ya sea marzo.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Las olas del océano chocan contra la costa.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I wish I could dance as well as the professionals.",
+  "is_english": 1
+ },
+ {
+  "sentence": "La película que vi anoche fue muy aterradora.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I'm feeling grateful for my health and happiness.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I love the feeling of the sun on my skin.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The rain is pouring down outside my window.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Ich bin sehr müde nach einem langen Arbeitstag.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Je n'arrive pas à croire que nous sommes déjà en mars.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The smell of a summer rainstorm is so refreshing.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I'm feeling motivated to achieve my goals.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The sound of a babbling brook is so peaceful.",
+  "is_english": 1
+ },
+ {
+  "sentence": "No puedo esperar hasta el fin de semana.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The coffee I had this morning was strong.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The book I'm reading is really interesting.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Der Kuchen, den meine Mutter gemacht hat, war köstlich.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I love the feeling of accomplishment after a good workout.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Ich kann es kaum erwarten, bis zum Wochenende zu kommen.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The stars in the night sky are so pretty.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Der Film, den ich gestern Abend gesehen habe, war sehr beängstigend.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The beach is my favorite place to go on vacation.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I wish I could play a musical instrument.",
+  "is_english": 1
+ },
+ {
+  "sentence": "El atardecer aquí es muy hermoso.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Il mio colore preferito è il blu, e il tuo?",
+  "is_english": 0
+ },
+ {
+  "sentence": "I love the taste of fresh fruit in the summer.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The taste of a juicy piece of fruit is so satisfying.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The taste of a perfectly cooked steak is a delight.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Mưa đang rơi dày dịu bên cửa sổ của tôi.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Tôi háo hức chờ đợi mùa mới của chương trình yêu thích của tôi.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Quyển sách tôi đang đọc rất thú vị.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Il pleut fort à l'extérieur de ma fenêtre.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Meine Lieblingsfarbe ist Blau, und deine?",
+  "is_english": 0
+ },
+ {
+  "sentence": "The plane flew over the mountains.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Pizza tôi ăn tối qua thật tuyệt vời.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Les fleurs dans le jardin sont en train de fleurir.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Mi color favorito es azul, ¿y el tuyo?",
+  "is_english": 0
+ },
+ {
+  "sentence": "I'm excited to try this new restaurant in town.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Hoàng hôn ở đây thật đẹp.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The leaves on the trees rustle in the wind.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The wind is blowing strongly outside.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Die Blumen im Garten blühen gerade.",
+  "is_english": 0
+ },
+ {
+  "sentence": "J'aime me promener dans le parc.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The feeling of a warm hug from a loved one is priceless.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Es regnet stark draußen vor meinem Fenster.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I wish I could paint like a professional artist.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The feeling of the sun on my face is rejuvenating.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Le soleil brille brillamment dans le ciel.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Ich gehe gerne im Park spazieren.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Der Sonnenuntergang hier ist sehr schön.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The smell of fresh flowers is so refreshing.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I can't wait for the weekend to come.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The pizza I had for dinner was amazing.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The city skyline looks amazing at night.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The sound of the ocean is so calming.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I'm feeling really happy today.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Die Pizza, die ich gestern Abend gegessen habe, war köstlich.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I'm excited for the new season of my favorite show.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The smell of freshly cut grass is the scent of summer.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The water in the lake is crystal clear.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Chị tôi và tôi có cùng sinh nhật.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I love spending time with my family and friends.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The sky is a beautiful shade of pink at sunset.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The scent of lavender is so calming and soothing.",
+  "is_english": 1
+ },
+ {
+  "sentence": "El perro ladra fuerte al cartero.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Vorrei poter andare in vacanza subito.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Ich liebe es, Eis an heißen Tagen zu essen.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Chị tôi và tôi có cùng sinh nhật.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Non vedo l'ora che arrivi il fine settimana.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Le gâteau que ma mère a fait était délicieux.",
+  "is_english": 0
+ },
+ {
+  "sentence": "J'adore manger de la glace par temps chaud.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Những bông hoa trong khu vườn đang nở.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I love watching movies with my friends.",
+  "is_english": 1
+ },
+ {
+  "sentence": "La torta che ha fatto mia madre era deliziosa.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The dog barked loudly at the mailman.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I love eating ice cream on a hot day.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The sunsets here are absolutely beautiful.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Está lloviendo fuerte afuera de mi ventana.",
+  "is_english": 0
+ },
+ {
+  "sentence": "L'aereo vola sopra le montagne.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I'm excited for the possibilities that tomorrow brings.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Non posso credere che sia già marzo.",
+  "is_english": 0
+ },
+ {
+  "sentence": "My phone battery is almost dead.",
+  "is_english": 1
+ },
+ {
+  "sentence": "La pizza que comí anoche estaba deliciosa.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Ma sœur et moi avons le même anniversaire.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I'm feeling really proud of myself right now.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Meine Schwester und ich haben am selben Tag Geburtstag.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I'm really tired after a long day at work.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I'm feeling a little bit overwhelmed right now.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I can hear birds chirping outside my window.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Die Sonne scheint hell am Himmel.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Il cane abbaia forte al postino.",
+  "is_english": 0
+ },
+ {
+  "sentence": "El sol brilla brillantemente en el cielo.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Le onde dell'oceano si infrangono sulla costa.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Adoro mangiare il gelato in giorni caldi.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I can't believe it's already March.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The stars in the night sky are a reminder of how small we are.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Mi hermana y yo tenemos el mismo cumpleaños.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Máy bay bay qua dãy núi.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The aroma of freshly baked cookies fills the kitchen.",
+  "is_english": 1
+ },
+ {
+  "sentence": "My favorite color is blue, what's yours?",
+  "is_english": 1
+ },
+ {
+  "sentence": "The taste of chocolate is pure bliss.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Mưa đang rơi dày dịu bên cửa sổ của tôi.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The flowers in the garden are blooming.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The grass in the park is so green and lush.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The fireworks on New Year's Eve were spectacular.",
+  "is_english": 1
+ },
+ {
+  "sentence": "El libro que estoy leyendo es muy interesante.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I wish I could speak multiple languages fluently.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The traffic on the highway is really bad today.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I'm feeling inspired to be creative today.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Das Flugzeug fliegt über die Berge.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The moon is shining brightly in the sky.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Die Wellen des Ozeans brechen gegen die Küste.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Sta piovendo forte fuori dalla mia finestra.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I'm excited for my upcoming vacation.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Estoy muy cansado después de un día de trabajo largo.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Tôi không thể đợi đến cuối tuần tới.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The movie I watched last night was really scary.",
+  "is_english": 1
+ },
+ {
+  "sentence": "J'aimerais pouvoir partir en vacances tout de suite.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I'm excited to see where life takes me in the future.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I wish I could have a pet dog.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Ich wünschte, ich könnte jetzt sofort in den Urlaub fahren.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The clouds in the sky look like cotton candy.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The sun is shining brightly in the sky.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Las flores en el jardín están floreciendo.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Il libro che sto leggendo è molto interessante.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Me encanta comer helado en días calurosos.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The sound of waves crashing on the shore is so powerful.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Máy bay bay qua dãy núi.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The feeling of accomplishment after finishing a project is amazing.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Les vagues de l'océan s'écrasent contre la côte.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I'm feeling a little bit anxious today.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Me gusta pasear por el parque.",
+  "is_english": 0
+ },
+ {
+  "sentence": "El avión vuela sobre las montañas.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The snow is falling softly outside my house.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I'm feeling a little bit hungry right now.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The feeling of sand between my toes is so relaxing.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Je suis impatient d'être en fin de semaine.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The smell of freshly brewed coffee is so comforting.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Le film que j'ai vu hier soir était très effrayant.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The music playing in the background is relaxing.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Tôi háo hức chờ đợi mùa mới của chương trình yêu thích của tôi.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Il sole brilla brillantemente nel cielo.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I love the feeling of grass between my fingers.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Pizza tôi ăn tối qua thật tuyệt vời.",
+  "is_english": 0
+ },
+ {
+  "sentence": "El pastel que hizo mi mamá estaba delicioso.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The food at the restaurant was really delicious.",
+  "is_english": 1
+ },
+ {
+  "sentence": "My sister and I have the same birthday.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Le coucher de soleil ici est très beau.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I love the smell of fresh bread baking in the oven.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Je suis très fatigué après une longue journée de travail.",
+  "is_english": 0
+ },
+ {
+  "sentence": "La pizza que j'ai mangée hier soir était délicieuse.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Desearía poder irme de vacaciones ahora mismo.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Sono molto stanco dopo una lunga giornata di lavoro.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Mi piace passeggiare nel parco.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I can't believe how fast time flies.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I wish I had more time to spend with my family.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Der Hund bellt laut nach dem Briefträger.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Le livre que je lis est très intéressant.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I love the sound of birds singing in the morning.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Das Buch, das ich lese, ist sehr interessant.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Ich kann nicht glauben, dass schon März ist.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I'm excited to see what the future holds for me.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Tôi thích đi dạo trong công viên.",
+  "is_english": 0
+ },
+ {
+  "sentence": "The sound of rain is so soothing.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I'm looking forward to a good night's sleep.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Những bông hoa trong khu vườn đang nở.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Hoàng hôn ở đây thật đẹp.",
+  "is_english": 0
+ },
+ {
+  "sentence": "L'avion vole au-dessus des montagnes.",
+  "is_english": 0
+ },
+ {
+  "sentence": "Tôi ước mình có thể đi nghỉ mát ngay bây giờ.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I'm feeling a little bit lonely today.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The taste of homemade soup on a cold day is heavenly.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Mia sorella ed io abbiamo lo stesso compleanno.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I'm excited for my friend's wedding next month.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The cake my mom made was delicious.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The mountains in the distance look so majestic.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The sound of children playing outside is heartwarming.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I enjoy going for walks in the park.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I wish I could make a difference in the world.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I'm excited to see my favorite band in concert.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Ich bin aufgeregt auf die neue Staffel meiner Lieblingsserie.",
+  "is_english": 0
+ },
+ {
+  "sentence": "I wish I could travel the world someday.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The ocean waves crashed against the shore.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The snowmen my friends and I made were hilarious.",
+  "is_english": 1
+ },
+ {
+  "sentence": "I wish I could travel back in time and witness history.",
+  "is_english": 1
+ },
+ {
+  "sentence": "The snowflakes falling from the sky are so pretty.",
+  "is_english": 1
+ },
+ {
+  "sentence": "Je suis excité pour la nouvelle saison de mon émission préférée.",
+  "is_english": 0
+ }
+]
