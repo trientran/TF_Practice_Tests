@@ -1,17 +1,27 @@
 import json
+import os
 from urllib.request import urlretrieve
 import numpy as np
 from keras import Sequential
 from keras.callbacks import EarlyStopping
-from keras.layers import Embedding, GlobalAveragePooling1D, Dense
+from keras.layers import Embedding, GlobalAveragePooling1D, Dense, Dropout, Conv1D, MaxPooling1D, LSTM
 from keras.preprocessing.text import Tokenizer
 from keras.saving.save import load_model
 from keras.utils import pad_sequences
 
 
 def nlp_binary_model():
-    url = 'https://trientran.github.io/tf-practice-exams/is-english.json'
-    urlretrieve(url, 'is-english.json')
+    json_file = 'is-english.json'
+    if not os.path.exists(json_file):
+        url = 'https://trientran.github.io/tf-practice-exams/is-english.json'
+        urlretrieve(url, json_file)
+
+    max_length = 25
+    trunc_type = 'pre'
+    vocab_size = 500
+    padding_type = 'pre'
+    embedding_dim = 16
+    oov_tok = "<OOV>"
 
     # Load the dataset
     with open('is-english.json', 'r') as f:
@@ -25,12 +35,12 @@ def nlp_binary_model():
         labels.append(item['is_english'])
 
     # Tokenize the texts
-    tokenizer = Tokenizer(oov_token='<OOV>')
+    tokenizer = Tokenizer(num_words=vocab_size, oov_token=oov_tok)
     tokenizer.fit_on_texts(texts)
     sequences = tokenizer.texts_to_sequences(texts)
 
     # Pad the sequences
-    padded_sequences = pad_sequences(sequences, padding='post')
+    padded_sequences = pad_sequences(sequences, maxlen=max_length, padding=padding_type, truncating=trunc_type)
 
     # Convert the labels to numpy array
     labels = np.array(labels)
@@ -48,8 +58,11 @@ def nlp_binary_model():
 
     # Build the model
     model = Sequential([
-        Embedding(input_dim=len(tokenizer.word_index) + 1, output_dim=32),
-        GlobalAveragePooling1D(),
+        Embedding(vocab_size, embedding_dim, input_length=max_length),
+        Dropout(0.2),
+        Conv1D(64, 5, activation='relu'),
+        MaxPooling1D(pool_size=4),
+        LSTM(64),
         Dense(1, activation='sigmoid')
     ])
 
