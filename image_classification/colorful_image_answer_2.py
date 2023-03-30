@@ -1,13 +1,10 @@
 # Copyright (c) 2023, Trien Phat Tran (Mr. Troy).
-# Makerere AI Lab hold the copyright of the iBean dataset under the MIT License.
 # The Malaria dataset available on the official National Institutes of Health (NIH) website is in the public domain and
 # does not have any specific license or copyright restrictions.
-
 
 # Binary (2-classes) image classification
 # Dataset: Malaria.
 # Direct link 1: https://data.lhncbc.nlm.nih.gov/public/Malaria/cell_images.zip (~350 Megabytes)
-# Or use direct link 2 https://trientran.github.io/images/malaria.zip (10 Megabytes) if your internet connection is weak
 # This dataset comprises 2 classes namely Parasitized and Uninfected, and it is not split into training and test sets
 # yet. The images' resolutions are varied.
 # Create a classifier for the given dataset. The required input shape must be 40x40x3 (RGB images).

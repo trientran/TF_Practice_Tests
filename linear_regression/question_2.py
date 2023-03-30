@@ -1,4 +1,4 @@
-# Copyright here
+# Copyright (c) 2023, Trien Phat Tran (Mr. Troy).
 
 # Question:
 
@@ -34,7 +34,8 @@ def regression_model():
 
 
 # ===============DO NOT EDIT THIS PART================================
-if __name__ == '__main__':  # Run and save your model
+if __name__ == '__main__':
+    # Run and save your model
     my_model = regression_model()
     model_name = "regression_model_1.h5"
     my_model.save(model_name)

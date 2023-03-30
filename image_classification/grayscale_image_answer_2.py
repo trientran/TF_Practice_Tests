@@ -9,22 +9,29 @@
 
 # Your task is to fill in the missing parts of the code block (where commented as "YOUR CODE HERE").
 
+import tensorflow as tf
+import tensorflow_datasets as tfds
 from keras import Sequential
 from keras.callbacks import EarlyStopping
-from keras.datasets import mnist
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from keras.saving.save import load_model
 
 
-# Use Keras dataset
+# Use Tensorflow datasets
 def my_model():
     # Load the MNIST dataset
-    dataset = mnist
-    (x_train, y_train), (x_test, y_test) = dataset.load_data()
+    (train_ds, test_ds), info = tfds.load(name='mnist', split=['train', 'test'], with_info=True, as_supervised=True)
 
-    # Normalize the input data
-    x_train = x_train.astype('float32') / 255.0
-    x_test = x_test.astype('float32') / 255.0
+    # YOUR CODE HERE
+    # Normalize the data
+    def normalize(image, label):
+        return tf.cast(image, tf.float32) / 255.0, label
+
+    # Preprocess the training data
+    train_ds = train_ds.map(normalize).cache().shuffle(info.splits['train'].num_examples).batch(32)
+
+    # Preprocess the test data
+    test_ds = test_ds.map(normalize).cache().batch(32)
 
     # Define the model architecture
     model = Sequential([
@@ -43,13 +50,8 @@ def my_model():
     # Define the early stopping callback
     early_stop = EarlyStopping(monitor='val_accuracy', patience=5, min_delta=0.01, verbose=1)
 
-    # Train the model with the early stopping callback
-    model.fit(
-        x_train.reshape(-1, 28, 28, 1),
-        y_train,
-        epochs=10,
-        validation_data=(x_test.reshape(-1, 28, 28, 1), y_test),
-        callbacks=[early_stop])
+    # Train the model
+    model.fit(train_ds, epochs=10, validation_data=test_ds, callbacks=[early_stop])
 
     return model
 
@@ -58,7 +60,7 @@ def my_model():
 if __name__ == '__main__':
     # Run and save your model
     my_model = my_model()
-    model_name = "grayscale_model_1.h5"
+    model_name = "grayscale_model_2.h5"
     my_model.save(model_name)
 
     # Reload the saved model

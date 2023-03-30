@@ -1,7 +1,14 @@
 # Copyright (c) 2023, Trien Phat Tran (Mr. Troy).
-# Makerere AI Lab hold the copyright of the iBean dataset under the MIT License.
-# The Malaria dataset available on the official National Institutes of Health (NIH) website is in the public domain and
-# does not have any specific license or copyright restrictions.
+
+# Question:
+
+# Multiclass image classification
+# Dataset: Mr Troy Fruits.
+# Direct link: https://trientran.github.io/images/mr-troy-fruits.zip (~11 Megabytes)
+# This dataset comprises 3 classes (Banana, Orange, and Apple), and it is not split into training and test sets yet.
+# Create a classifier for the given dataset. The required input shape must be 200x200x3 (RGB images).
+
+# Your task is to fill in the missing parts of the code block (where commented as "YOUR CODE HERE").
 
 
 import os
@@ -13,16 +20,6 @@ from keras.callbacks import EarlyStopping
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dropout, Dense
 from keras.saving.save import load_model
 from keras_preprocessing.image import ImageDataGenerator
-
-
-# Multiclass image classification
-# Dataset: Mr Troy Fruits.
-# Direct link: https://trientran.github.io/images/mr-troy-fruits.zip (~11 Megabytes)
-# This dataset comprises 3 classes (Banana, Orange, and Apple), and it is not split into
-# training and test sets yet.
-# Create a classifier for the given dataset. The required input shape must be 200x200x3 (RGB images).
-
-# Your task is to fill in the missing parts of the code block (where commented as "YOUR CODE HERE").
 
 
 def multiclass_model():
@@ -39,11 +36,6 @@ def multiclass_model():
         zip_ref.extractall('data/')
         zip_ref.close()
 
-    # Very important: we must set the input image size (input shape/input layer) as required in the Question.
-    # For example, if the question mentions the required image size of 200x200 or 100x100 or 150x150, we must set that
-    # value here
-    img_size = (200, 200)
-
     training_datagen = ImageDataGenerator(
         rescale=1. / 255,
         shear_range=0.2,
@@ -51,6 +43,11 @@ def multiclass_model():
         horizontal_flip=True,
         validation_split=0.2
     )
+
+    # Very important: we must set the input image size (input shape/input layer) as required in the Question.
+    # For example, if the question mentions the required image size of 200x200 or 100x100 or 150x150, we must set that
+    # value here
+    img_size = (200, 200)
 
     train_generator = training_datagen.flow_from_directory(
         data_folder,
