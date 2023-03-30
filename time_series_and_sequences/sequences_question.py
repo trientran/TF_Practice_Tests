@@ -1,3 +1,13 @@
+# Copyright (c) 2023, Trien Phat Tran (Mr. Troy).
+
+# Question:
+
+# Build and train a Sequential model that can predict the level of humidity for My City using the my-city-humidity.csv
+# dataset. The normalized dataset should have a mean absolute error (MAE) of 0.13 or less.
+
+# Your task is to fill in the missing parts of the code block (where commented as "YOUR CODE HERE").
+
+
 import csv
 import os
 from urllib.request import urlretrieve
@@ -5,10 +15,6 @@ from urllib.request import urlretrieve
 import numpy as np
 import tensorflow as tf
 from keras import Sequential
-from keras.callbacks import EarlyStopping
-from keras.layers import Conv1D, LSTM, Dense
-from keras.losses import Huber
-from keras.optimizers import SGD
 from keras.saving.save import load_model
 
 
@@ -24,12 +30,11 @@ def sequences_model():
         reader = csv.reader(csvfile, delimiter=',')
         next(reader)
         for row in reader:
-            humidity.append(float(row[2]))
+            humidity.append()  # # YOUR CODE HERE (fill in the append() function)
 
-    series = np.array(humidity)
+    series =  # YOUR CODE HERE
 
-    # DO NOT CHANGE THIS CODE
-    # This is the normalization function
+    # Normalize the data
     min_value = np.min(series)
     max_value = np.max(series)
     series -= min_value
@@ -43,10 +48,9 @@ def sequences_model():
     # series, so we don't need to include the time step as a feature in the model. Therefore, we only use the x_train
     # and x_valid variables (not time_train nor time_valid), which contain the normalized sunspot activity values for
     # the training and validation sets.
-    x_train = series[:split_time]
-    x_valid = series[split_time:]
+    x_train =  # YOUR CODE HERE
+    x_valid =  # YOUR CODE HERE
 
-    # DO NOT CHANGE THIS CODE
     window_size = 30
     batch_size = 32
     shuffle_buffer_size = 1000
@@ -58,22 +62,10 @@ def sequences_model():
                                  shuffle_buffer=shuffle_buffer_size)
 
     model = Sequential([
-        Conv1D(filters=60, kernel_size=5, strides=1, padding="causal", activation="relu", input_shape=[None, 1]),
-        LSTM(60, return_sequences=True),
-        LSTM(60, return_sequences=True),
-        Dense(30, activation="relu"),
-        Dense(10, activation="relu"),
-        Dense(1)
+        # YOUR CODE HERE
     ])
 
-    # Compile the model
-    model.compile(loss=Huber(), optimizer=SGD(learning_rate=1e-5, momentum=0.9), metrics=["mae"])
-
-    # Optional: Define an early stopping callback.
-    early_stop = EarlyStopping(monitor='val_mae', mode='min', patience=10, verbose=1, min_delta=0.005)
-
-    # Fit the model
-    model.fit(train_set, epochs=200, verbose=1, validation_data=valid_set, callbacks=[MyCallback()])
+    # Compile and fit data to the model
 
     return model
 
