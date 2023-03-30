@@ -14,8 +14,6 @@
 import os
 
 from keras import Sequential
-from keras.callbacks import EarlyStopping
-from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from keras.saving.save import load_model
 from keras.utils import image_dataset_from_directory, get_file
 
@@ -47,6 +45,7 @@ def binary_model():
         # YOUR CODE HERE
     ])
 
+    # Compile and fit data to the model
     # YOUR CODE HERE
 
     return model

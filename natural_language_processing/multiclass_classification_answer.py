@@ -1,17 +1,34 @@
+# Copyright (c) 2023, Trien Phat Tran (Mr. Troy).
+
+# Question:
+
+# Build and train a binary classifier for the language classification dataset. The dataset is typically a JSON array
+# of 500 JSON objects. Each object has 3 keys: sentence, language_code, and is_english.
+# We want our model to be able to indicate which language a piece of text or sentence is written in.
+# There are 5 languages need to be classified. Below is the language_code and its corresponding language name.
+# 0: English
+# 1: Vietnamese
+# 2: Spanish
+# 3: Portuguese
+# 4: Italian
+
+# Your task is to fill in the missing parts of the code block (where commented as "YOUR CODE HERE").
+
+
 import json
 import os
-from urllib.request import urlretrieve
 
 import numpy as np
 from keras import Sequential
 from keras.callbacks import EarlyStopping
-from keras.layers import Embedding, Dense, Dropout, Conv1D, MaxPooling1D, LSTM
-from keras.preprocessing.text import Tokenizer
+from keras.layers import Embedding, Dropout, Conv1D, MaxPooling1D, LSTM, Dense
 from keras.saving.save import load_model
-from keras.utils import pad_sequences
+from keras.utils import pad_sequences, to_categorical
+from keras.utils.data_utils import urlretrieve
+from keras_preprocessing.text import Tokenizer
 
 
-def nlp_binary_model():
+def nlp_multiclass_model():
     json_file = 'language-classification.json'
     if not os.path.exists(json_file):
         url = 'https://trientran.github.io/tf-practice-exams/language-classification.json'
@@ -33,7 +50,7 @@ def nlp_binary_model():
     labels = []
     for item in datastore:
         texts.append(item['sentence'])
-        labels.append(item['is_english'])
+        labels.append(item['language_code'])
 
     # Tokenize the texts
     tokenizer = Tokenizer(num_words=vocab_size, oov_token=oov_tok)
@@ -57,6 +74,9 @@ def nlp_binary_model():
     x_val = padded_sequences[val_indices]
     y_val = labels[val_indices]
 
+    # Define the number of classes
+    num_classes = len(set(labels))
+
     # Build the model
     model = Sequential([
         Embedding(input_dim=vocab_size + 1, output_dim=embedding_dim, input_length=max_length),
@@ -64,17 +84,20 @@ def nlp_binary_model():
         Conv1D(64, 5, activation='relu'),
         MaxPooling1D(pool_size=4),
         LSTM(64),
-        Dense(1, activation='sigmoid')
+        Dense(num_classes, activation='softmax')
     ])
 
     # Compile the model
-    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
     # Define an early stopping callback. Feel free to adjust the parameters' values if you want to fine-tune this model
     early_stop = EarlyStopping(monitor='val_accuracy', patience=5, min_delta=0.01, verbose=1)
 
     # Train the model
-    model.fit(x_train, y_train, epochs=50, validation_data=(x_val, y_val), callbacks=[early_stop])
+    y_train_categorical = to_categorical(y_train, )
+    y_val_categorical = to_categorical(y_val, 5)
+    model.fit(x_train, y_train_categorical, epochs=50, validation_data=(x_val, y_val_categorical),
+              callbacks=[early_stop])
 
     return model
 
@@ -82,8 +105,8 @@ def nlp_binary_model():
 # ===============DO NOT EDIT THIS PART================================
 if __name__ == '__main__':
     # Run and save your model
-    my_model = nlp_binary_model()
-    model_name = "nlp_binary_model.h5"
+    my_model = nlp_multiclass_model()
+    model_name = "nlp_multiclass_model.h5"
     my_model.save(model_name)
 
     # Reload the saved model

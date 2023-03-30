@@ -48,6 +48,7 @@ def multiclass_model():
         Dense(3, activation='softmax')
     ])
 
+    # Compile and fit data to the model
     # YOUR CODE HERE
 
     return model
