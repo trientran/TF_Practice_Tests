@@ -25,15 +25,15 @@ from keras_preprocessing.image import ImageDataGenerator
 def multiclass_model():
     # After the data set has been downloaded below, we must double-check if the extracted data folder path is correct
     # by looking at the project browser on the left side. If not, please change it accordingly!
-    data_folder = "data/mr-troy-fruits"
+    data_folder = "temp/mr-troy-fruits/"
 
     # download and extract the dataset if not existing
     if not os.path.exists(data_folder):
-        dataset_url = 'https://trientran.github.io/images/mr-troy-fruits.zip'
+        dataset_url = 'https://trientran.github.io/tf-practice-exams/mr-troy-fruits.zip'
         local_zip = 'mr-troy-fruits.zip'
         urlretrieve(dataset_url, local_zip)
         zip_ref = zipfile.ZipFile(local_zip, 'r')
-        zip_ref.extractall('data/')
+        zip_ref.extractall('temp/')
         zip_ref.close()
 
     training_datagen = ImageDataGenerator(

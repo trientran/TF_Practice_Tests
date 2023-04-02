@@ -22,7 +22,7 @@ from keras.utils import image_dataset_from_directory, get_file
 
 def binary_model():
     dataset_url = 'https://data.lhncbc.nlm.nih.gov/public/Malaria/cell_images.zip'
-    data_folder = '/tmp/cell_images'
+    data_folder = 'temp/cell_images/'
     if not os.path.exists(data_folder):
         # download and extract the dataset
         zip_path = get_file('cell_images.zip', dataset_url, extract=True, cache_subdir='tmp')
