@@ -4,7 +4,7 @@
 
 # Binary (2-classes) image classification
 # Dataset: Malaria.
-# Direct link 1: https://data.lhncbc.nlm.nih.gov/public/Malaria/cell_images.zip (~350 Megabytes)
+# Direct link: https://data.lhncbc.nlm.nih.gov/public/Malaria/cell_images.zip (~350 Megabytes)
 # This dataset comprises 2 classes namely Parasitized and Uninfected, and it is not split into training and test sets
 # yet. The images' resolutions are varied.
 # Create a classifier for the given dataset. The required input shape must be 40x40x3 (RGB images).
