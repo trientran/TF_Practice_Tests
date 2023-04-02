@@ -5,3 +5,11 @@
 - check Python packages tab, open Doucmentatoio tab if possible
 - in callback the mode is very important as it decide the logic to stop training
 - input shape is important and must match the required one
+- In general, the APIs of these two modules are very similar, and you can use either one to define a Sequential model in
+your code. However, if you are using TensorFlow as your backend, it might be more convenient to use tensorflow.python.keras.models.Sequential.
+Note that in the latest versions of TensorFlow, the tensorflow.python.keras module has been deprecated in favor of the
+standalone keras module, so you should use keras.models.Sequential instead of tensorflow.python.keras.models.Sequential
+for better compatibility with future versions of TensorFlow.
+-  urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1108)>
+If you're using macOS go to Macintosh HD > Applications > Python3.6 folder (or whatever version of python you're using) > double click on "Install Certificates.command" file. :D
+- do not install the latest version of Pycharm yet due to incompatibility
