@@ -5,6 +5,7 @@
 # Multiclass image classification
 # Dataset: Mr Troy Fruits.
 # Direct link: https://trientran.github.io/images/mr-troy-fruits.zip (~11 Megabytes)
+# Back-up direct link: http://dl.dropboxusercontent.com/s/a32yc71tgfvfvku/mr-troy-fruits.zip
 # This dataset comprises 3 classes (Banana, Orange, and Apple), and it is not split into training and test sets yet.
 # Create a classifier for the given dataset. The required input shape must be 200x200x3 (RGB images).
 
@@ -29,7 +30,7 @@ def multiclass_model():
 
     # download and extract the dataset if not existing
     if not os.path.exists(data_folder):
-        dataset_url = 'https://trientran.github.io/tf-practice-exams/mr-troy-fruits.zip'
+        dataset_url = 'http://dl.dropboxusercontent.com/s/a32yc71tgfvfvku/mr-troy-fruits.zip'
         local_zip = 'mr-troy-fruits.zip'
         urlretrieve(dataset_url, local_zip)
         zip_ref = zipfile.ZipFile(local_zip, 'r')
