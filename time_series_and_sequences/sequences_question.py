@@ -15,6 +15,7 @@ from urllib.request import urlretrieve
 import numpy as np
 import tensorflow as tf
 from keras import Sequential
+from keras.callbacks import Callback
 from keras.saving.save import load_model
 
 
@@ -71,7 +72,7 @@ def sequences_model():
 
 
 # If you are aiming at achieving a certain limit of Mean Absolute Error, this callback class will be handy.
-class MyCallback(tf.keras.callbacks.Callback):
+class MyCallback(Callback):
     def on_epoch_end(self, epoch, logs=None):
         if logs is None:
             logs = {}

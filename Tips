@@ -13,3 +13,4 @@ for better compatibility with future versions of TensorFlow.
 -  urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1108)>
 If you're using macOS go to Macintosh HD > Applications > Python3.6 folder (or whatever version of python you're using) > double click on "Install Certificates.command" file. :D
 - do not install the latest version of Pycharm yet due to incompatibility
+- install libs via Preferences not python packages tab
