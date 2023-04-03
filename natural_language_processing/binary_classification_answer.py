@@ -37,7 +37,7 @@ def nlp_binary_model():
     oov_tok = "<OOV>"
 
     # Load the dataset
-    with open(json_file, 'r') as f:
+    with open(json_file, 'r', encoding='utf-8') as f:
         datastore = json.load(f)
 
     # Extract the texts and labels
