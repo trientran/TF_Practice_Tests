@@ -74,7 +74,7 @@ def nlp_binary_model():
     x_val = padded_sequences[val_indices]
     y_val = labels[val_indices]
 
-    # Build the model
+    # Define the model architecture
     model = Sequential([
         Embedding(input_dim=vocab_size + 1, output_dim=embedding_dim, input_length=max_length),
         Dropout(rate=0.2),
@@ -83,6 +83,8 @@ def nlp_binary_model():
         LSTM(64),
         Dense(units=1, activation='sigmoid')
     ])
+
+    # Compile and fit data to the model:
 
     # Compile the model
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])

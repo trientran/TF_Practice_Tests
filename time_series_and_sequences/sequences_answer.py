@@ -38,15 +38,14 @@ def sequences_model():
 
     series = np.array(humidity)
 
-    # DO NOT CHANGE THIS CODE
-    # This is the normalization function
+    # Normalize the data
     min_value = np.min(series)
     max_value = np.max(series)
     series -= min_value
     series /= max_value
 
-    # The data is split into training and validation sets at time step 2900. YOU MUST CHANGE THIS VALUE TO MATCH THE
-    # REQUIRED ONE IN THE REAL TEST (based on the dataset size or number of records in the CSV file)
+    # The data is split into training and validation sets at time step 2900 (~90% of the number of records). YOU MUST
+    # REPLACE THIS VALUE WITH THE ONE GIVEN IN THE REAL TEST BECAUSE THE REAL TEST'S DATASET MAY BE BIGGER OR SMALLER
     split_time = 2900
 
     # In this particular problem, we only need to predict the sunspot activity based on the previous values of the
@@ -84,6 +83,7 @@ def sequences_model():
         Dense(units=1)
     ])
 
+    # Compile and fit data to the model
     # Compile the model
     model.compile(loss=Huber(), optimizer=SGD(learning_rate=1e-5, momentum=0.9), metrics=["mae"])
 

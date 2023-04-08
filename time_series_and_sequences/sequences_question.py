@@ -41,13 +41,13 @@ def sequences_model():
     series -= min_value
     series /= max_value
 
-    # The data is split into training and validation sets at time step 2900. YOU MUST CHANGE THIS VALUE TO MATCH THE
-    # REQUIRED ONE IN THE REAL TEST (based on the dataset size or number of records in the CSV file)
+    # The data is split into training and validation sets at time step 2900 (~90% of the number of records). YOU MUST
+    # REPLACE THIS VALUE WITH THE ONE GIVEN IN THE REAL TEST BECAUSE THE REAL TEST'S DATASET MAY BE BIGGER OR SMALLER
     split_time = 2900
 
-    # In this particular problem, we only need to predict the sunspot activity based on the previous values of the
+    # In this particular problem, we only need to predict the humidity based on the previous values of the
     # series, so we don't need to include the time step as a feature in the model. Therefore, we only use the x_train
-    # and x_valid variables (not time_train nor time_valid), which contain the normalized sunspot activity values for
+    # and x_valid variables (not time_train nor time_valid), which contain the normalized humidity values for
     # the training and validation sets.
     x_train =  # YOUR CODE HERE
     x_valid =  # YOUR CODE HERE
@@ -75,6 +75,7 @@ def sequences_model():
     ])
 
     # Compile and fit data to the model
+    # YOUR CODE HERE
 
     return model
 

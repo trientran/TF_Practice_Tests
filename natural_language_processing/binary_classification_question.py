@@ -38,7 +38,7 @@ def nlp_binary_model():
     labels = []
     # YOUR CODE HERE
 
-    # Build the model
+    # Define the model architecture
     model = Sequential([
         # YOUR CODE HERE
     ])

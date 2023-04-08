@@ -4,8 +4,8 @@
 
 # Multiclass image classification
 # Dataset: Mr Troy Fruits.
-# Direct link: https://trientran.github.io/images/mr-troy-fruits.zip (~11 Megabytes)
-# Back-up direct link: http://dl.dropboxusercontent.com/s/a32yc71tgfvfvku/mr-troy-fruits.zip
+# Direct link: http://dl.dropboxusercontent.com/s/a32yc71tgfvfvku/mr-troy-fruits.zip (~11 Megabytes)
+# Back-up direct link: https://trientran.github.io/images/mr-troy-fruits.zip
 # This dataset comprises 3 classes (Banana, Orange, and Apple), and it is not split into training and test sets yet.
 # Create a classifier for the given dataset. The required input shape must be 200x200x3 (RGB images).
 

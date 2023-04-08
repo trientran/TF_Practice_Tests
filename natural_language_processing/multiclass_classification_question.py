@@ -26,7 +26,7 @@ def nlp_multiclass_model():
     json_file = 'language-classification.json'
     if not os.path.exists(json_file):
         url = 'https://trientran.github.io/tf-practice-exams/language-classification.json'
-        urlretrieve(url=url, filename=wjson_file)
+        urlretrieve(url=url, filename=json_file)
 
     max_length = 25
     trunc_type = 'pre'  # Can be replaced with 'post'
