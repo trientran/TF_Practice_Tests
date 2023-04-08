@@ -10,17 +10,11 @@
 # Your task is to fill in the missing parts of the code block (where commented as "YOUR CODE HERE").
 
 
-import json
 import os
 from urllib.request import urlretrieve
 
-import numpy as np
 from keras import Sequential
-from keras.callbacks import EarlyStopping
-from keras.layers import Embedding, Dense, Dropout, Conv1D, MaxPooling1D, LSTM
-from keras.preprocessing.text import Tokenizer
 from keras.saving.save import load_model
-from keras.utils import pad_sequences
 
 
 def nlp_binary_model():
@@ -30,9 +24,9 @@ def nlp_binary_model():
         urlretrieve(url=url, filename=json_file)
 
     max_length = 25
-    trunc_type = 'pre'  # Can be replaced with 'post'
+    trunc_type = 'pre'  # May be replaced with 'post'
     vocab_size = 500
-    padding_type = 'pre'  # Can be replaced with 'post'
+    padding_type = 'pre'  # May be replaced with 'post'
     embedding_dim = 32
     oov_tok = "<OOV>"
 
