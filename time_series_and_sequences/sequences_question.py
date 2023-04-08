@@ -23,7 +23,7 @@ def sequences_model():
     csv_file = 'my-city-humidity.csv'
     if not os.path.exists(csv_file):
         url = 'https://trientran.github.io/tf-practice-exams/my-city-humidity.csv'
-        urlretrieve(url, csv_file)
+        urlretrieve(url=url, filename=csv_file)
 
     humidity = []
 
@@ -56,11 +56,19 @@ def sequences_model():
     batch_size = 32
     shuffle_buffer_size = 1000
 
-    train_set = windowed_dataset(x_train, window_size=window_size, batch_size=batch_size,
-                                 shuffle_buffer=shuffle_buffer_size)
+    train_set = windowed_dataset(
+        series=x_train,
+        window_size=window_size,
+        batch_size=batch_size,
+        shuffle_buffer=shuffle_buffer_size
+    )
 
-    valid_set = windowed_dataset(x_valid, window_size=window_size, batch_size=batch_size,
-                                 shuffle_buffer=shuffle_buffer_size)
+    valid_set = windowed_dataset(
+        series=x_valid,
+        window_size=window_size,
+        batch_size=batch_size,
+        shuffle_buffer=shuffle_buffer_size
+    )
 
     model = Sequential([
         # YOUR CODE HERE
@@ -86,7 +94,7 @@ class MyCallback(Callback):
 def windowed_dataset(series, window_size, batch_size, shuffle_buffer):
     series = tf.expand_dims(series, axis=-1)
     ds = tf.data.Dataset.from_tensor_slices(series)
-    ds = ds.window(window_size + 1, shift=1, drop_remainder=True)
+    ds = ds.window(size=window_size + 1, shift=1, drop_remainder=True)
     ds = ds.flat_map(lambda w: w.batch(window_size + 1))
     ds = ds.shuffle(shuffle_buffer)
     ds = ds.map(lambda w: (w[:-1], w[1:]))
@@ -96,11 +104,11 @@ def windowed_dataset(series, window_size, batch_size, shuffle_buffer):
 if __name__ == '__main__':
     # Run and save your model
     my_model = sequences_model()
-    model_name = "sequences_model.h5"
-    my_model.save(model_name)
+    filepath = "sequences_model.h5"
+    my_model.save(filepath)
 
     # Reload the saved model
-    saved_model = load_model(model_name)
+    saved_model = load_model(filepath)
 
     # Show the model architecture
     saved_model.summary()

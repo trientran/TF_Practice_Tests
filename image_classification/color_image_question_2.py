@@ -23,7 +23,7 @@ def binary_model():
     data_folder = '/tmp/cell_images'
     if not os.path.exists(data_folder):
         # download and extract the dataset
-        zip_path = get_file('cell_images.zip', dataset_url, extract=True, cache_subdir='tmp')
+        zip_path = get_file(fname='cell_images.zip', origin=dataset_url, extract=True, cache_subdir='tmp')
         os.rename(os.path.join(os.path.dirname(zip_path), 'cell_images'), data_folder)
 
     # Define image size and batch size
@@ -55,11 +55,11 @@ def binary_model():
 if __name__ == '__main__':
     # Run and save your model
     my_model = binary_model()
-    model_name = "binary_model.h5"
-    my_model.save(model_name)
+    filepath = "binary_rgb_model.h5"
+    my_model.save(filepath)
 
     # Reload the saved model
-    saved_model = load_model(model_name)
+    saved_model = load_model(filepath)
 
     # Show the model architecture
     saved_model.summary()

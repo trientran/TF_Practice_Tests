@@ -27,11 +27,11 @@ def my_model():
 if __name__ == '__main__':
     # Run and save your model
     my_model = my_model()
-    model_name = "grayscale_model_2.h5"
-    my_model.save(model_name)
+    filepath = "grayscale_model_2.h5"
+    my_model.save(filepath)
 
     # Reload the saved model
-    saved_model = load_model(model_name)
+    saved_model = load_model(filepath)
 
     # Show the model architecture
     saved_model.summary()

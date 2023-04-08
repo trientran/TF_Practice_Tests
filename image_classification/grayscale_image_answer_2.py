@@ -25,7 +25,7 @@ def my_model():
     # YOUR CODE HERE
     # Normalize the data
     def normalize(image, label):
-        return tf.cast(image, tf.float32) / 255.0, label
+        return tf.cast(x=image, dtype=tf.float32) / 255.0, label
 
     # Preprocess the training data
     train_ds = train_ds.map(normalize).cache().shuffle(info.splits['train'].num_examples).batch(32)
@@ -35,13 +35,13 @@ def my_model():
 
     # Define the model architecture
     model = Sequential([
-        Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
+        Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(28, 28, 1)),
         MaxPooling2D((2, 2)),
-        Conv2D(64, (3, 3), activation='relu'),
+        Conv2D(filters=64, kernel_size=(3, 3), activation='relu'),
         MaxPooling2D((2, 2)),
         Flatten(),
-        Dense(64, activation='relu'),
-        Dense(10, activation='softmax')
+        Dense(units=64, activation='relu'),
+        Dense(units=10, activation='softmax')
     ])
 
     # Compile the model
@@ -51,7 +51,7 @@ def my_model():
     early_stop = EarlyStopping(monitor='val_accuracy', patience=5, min_delta=0.01, verbose=1)
 
     # Train the model
-    model.fit(train_ds, epochs=10, validation_data=test_ds, callbacks=[early_stop])
+    model.fit(x=train_ds, epochs=10, validation_data=test_ds, callbacks=[early_stop])
 
     return model
 
@@ -60,11 +60,11 @@ def my_model():
 if __name__ == '__main__':
     # Run and save your model
     my_model = my_model()
-    model_name = "grayscale_model_2.h5"
-    my_model.save(model_name)
+    filepath = "grayscale_model_2.h5"
+    my_model.save(filepath)
 
     # Reload the saved model
-    saved_model = load_model(model_name)
+    saved_model = load_model(filepath)
 
     # Show the model architecture
     saved_model.summary()

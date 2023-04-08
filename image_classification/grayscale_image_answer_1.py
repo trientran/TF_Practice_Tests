@@ -30,13 +30,14 @@ def my_model():
 
     # Define the model architecture
     model = Sequential([
-        Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
-        MaxPooling2D((2, 2)),
-        Conv2D(64, (3, 3), activation='relu'),
-        MaxPooling2D((2, 2)),
+        Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(28, 28, 1)),
+        # black-white images have only one color channel
+        MaxPooling2D(pool_size=(2, 2)),
+        Conv2D(filters=64, kernel_size=(3, 3), activation='relu'),
+        MaxPooling2D(pool_size=(2, 2)),
         Flatten(),
-        Dense(64, activation='relu'),
-        Dense(10, activation='softmax')
+        Dense(units=64, activation='relu'),
+        Dense(units=10, activation='softmax')
     ])
 
     # Compile the model
@@ -47,8 +48,8 @@ def my_model():
 
     # Train the model with the early stopping callback
     model.fit(
-        x_train.reshape(-1, 28, 28, 1),
-        y_train,
+        x=x_train.reshape(-1, 28, 28, 1),
+        y=y_train,
         epochs=10,
         validation_data=(x_test.reshape(-1, 28, 28, 1), y_test),
         callbacks=[early_stop])
@@ -60,11 +61,11 @@ def my_model():
 if __name__ == '__main__':
     # Run and save your model
     my_model = my_model()
-    model_name = "grayscale_model_1.h5"
-    my_model.save(model_name)
+    filepath = "grayscale_model_1.h5"
+    my_model.save(filepath)
 
     # Reload the saved model
-    saved_model = load_model(model_name)
+    saved_model = load_model(filepath)
 
     # Show the model architecture
     saved_model.summary()

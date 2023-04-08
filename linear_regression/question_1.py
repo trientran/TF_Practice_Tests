@@ -37,11 +37,11 @@ def regression_model():
 if __name__ == '__main__':
     # Run and save your model
     my_model = regression_model()
-    model_name = "regression_model_1.h5"
-    my_model.save(model_name)
+    filepath = "regression_model_1.h5"
+    my_model.save(filepath)
 
     # Reload the saved model
-    saved_model = load_model(model_name)
+    saved_model = load_model(filepath)
 
     # Show the model architecture
     saved_model.summary()

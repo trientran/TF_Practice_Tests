@@ -27,7 +27,7 @@ def nlp_binary_model():
     json_file = 'language-classification.json'
     if not os.path.exists(json_file):
         url = 'https://trientran.github.io/tf-practice-exams/language-classification.json'
-        urlretrieve(url, json_file)
+        urlretrieve(url=url, filename=json_file)
 
     max_length = 25
     trunc_type = 'pre'  # Can be replaced with 'post'
@@ -37,7 +37,7 @@ def nlp_binary_model():
     oov_tok = "<OOV>"
 
     # Load the dataset
-    with open(json_file, 'r', encoding='utf-8') as f:
+    with open(file=json_file, mode='r', encoding='utf-8') as f:
         datastore = json.load(f)
 
     # Extract the texts and labels
@@ -53,7 +53,12 @@ def nlp_binary_model():
     sequences = tokenizer.texts_to_sequences(texts)
 
     # Pad the sequences
-    padded_sequences = pad_sequences(sequences, maxlen=max_length, padding=padding_type, truncating=trunc_type)
+    padded_sequences = pad_sequences(
+        sequences=sequences,
+        maxlen=max_length,
+        padding=padding_type,
+        truncating=trunc_type
+    )
 
     # Convert the labels to numpy array
     labels = np.array(labels)
@@ -72,11 +77,11 @@ def nlp_binary_model():
     # Build the model
     model = Sequential([
         Embedding(input_dim=vocab_size + 1, output_dim=embedding_dim, input_length=max_length),
-        Dropout(0.2),
-        Conv1D(64, 5, activation='relu'),
+        Dropout(rate=0.2),
+        Conv1D(filters=64, kernel_size=5, activation='relu'),
         MaxPooling1D(pool_size=4),
         LSTM(64),
-        Dense(1, activation='sigmoid')
+        Dense(units=1, activation='sigmoid')
     ])
 
     # Compile the model
@@ -86,7 +91,7 @@ def nlp_binary_model():
     early_stop = EarlyStopping(monitor='val_accuracy', patience=5, min_delta=0.01, verbose=1)
 
     # Train the model
-    model.fit(x_train, y_train, epochs=50, validation_data=(x_val, y_val), callbacks=[early_stop])
+    model.fit(x=x_train, y=y_train, epochs=50, validation_data=(x_val, y_val), callbacks=[early_stop])
 
     return model
 
@@ -95,11 +100,11 @@ def nlp_binary_model():
 if __name__ == '__main__':
     # Run and save your model
     my_model = nlp_binary_model()
-    model_name = "nlp_binary_model.h5"
-    my_model.save(model_name)
+    filepath = "nlp_binary_model.h5"
+    my_model.save(filepath)
 
     # Reload the saved model
-    saved_model = load_model(model_name)
+    saved_model = load_model(filepath)
 
     # Show the model architecture
     saved_model.summary()

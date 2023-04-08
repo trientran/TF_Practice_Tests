@@ -25,7 +25,7 @@ def binary_model():
     data_folder = 'temp/cell_images/'
     if not os.path.exists(data_folder):
         # download and extract the dataset
-        zip_path = get_file('cell_images.zip', dataset_url, extract=True, cache_subdir='tmp')
+        zip_path = get_file(fname='cell_images.zip',origin= dataset_url, extract=True, cache_subdir='tmp')
         os.rename(os.path.join(os.path.dirname(zip_path), 'cell_images'), data_folder)
 
     # Define image size and batch size
@@ -34,7 +34,7 @@ def binary_model():
 
     # Create the training dataset
     train_ds = image_dataset_from_directory(
-        data_folder,
+        directory=data_folder,
         validation_split=0.2,
         subset='training',
         seed=42,
@@ -44,7 +44,7 @@ def binary_model():
 
     # Create the validation dataset
     val_ds = image_dataset_from_directory(
-        data_folder,
+        directory=data_folder,
         validation_split=0.2,
         subset='validation',
         seed=42,
@@ -54,13 +54,13 @@ def binary_model():
 
     # Define the model architecture
     model = Sequential([
-        Conv2D(32, (3, 3), activation='relu', input_shape=(img_size[0], img_size[1], 3)),
-        MaxPooling2D((2, 2)),
-        Conv2D(64, (3, 3), activation='relu'),
-        MaxPooling2D((2, 2)),
+        Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(img_size[0], img_size[1], 3)),
+        MaxPooling2D(pool_size=(2, 2)),
+        Conv2D(filters=64, kernel_size=(3, 3), activation='relu'),
+        MaxPooling2D(pool_size=(2, 2)),
         Flatten(),
-        Dense(64, activation='relu'),
-        Dense(2, activation='softmax')
+        Dense(units=64, activation='relu'),
+        Dense(units=2, activation='softmax')
         # Dense(1, activation='sigmoid') # The last layer can be replaced with this but expect different output
     ])
 
@@ -72,7 +72,7 @@ def binary_model():
     early_stop = EarlyStopping(monitor='val_accuracy', patience=5, verbose=1, min_delta=0.01)
 
     # Train the model with early stopping callback
-    model.fit(train_ds, epochs=15, validation_data=val_ds, callbacks=[early_stop])
+    model.fit(x=train_ds, epochs=15, validation_data=val_ds, callbacks=[early_stop])
 
     return model
 
@@ -81,11 +81,11 @@ def binary_model():
 if __name__ == '__main__':
     # Run and save your model
     my_model = binary_model()
-    model_name = "binary_model.h5"
-    my_model.save(model_name)
+    filepath = "binary_rgb_model.h5"
+    my_model.save(filepath)
 
     # Reload the saved model
-    saved_model = load_model(model_name)
+    saved_model = load_model(filepath)
 
     # Show the model architecture
     saved_model.summary()

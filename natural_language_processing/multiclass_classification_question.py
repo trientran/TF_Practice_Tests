@@ -26,7 +26,7 @@ def nlp_multiclass_model():
     json_file = 'language-classification.json'
     if not os.path.exists(json_file):
         url = 'https://trientran.github.io/tf-practice-exams/language-classification.json'
-        urlretrieve(url, json_file)
+        urlretrieve(url=url, filename=wjson_file)
 
     max_length = 25
     trunc_type = 'pre'  # Can be replaced with 'post'
@@ -73,11 +73,11 @@ def nlp_multiclass_model():
 if __name__ == '__main__':
     # Run and save your model
     my_model = nlp_multiclass_model()
-    model_name = "nlp_multiclass_model.h5"
-    my_model.save(model_name)
+    filepath = "nlp_multiclass_model.h5"
+    my_model.save(filepath)
 
     # Reload the saved model
-    saved_model = load_model(model_name)
+    saved_model = load_model(filepath)
 
     # Show the model architecture
     saved_model.summary()

@@ -30,8 +30,8 @@ def multiclass_model():
     if not os.path.exists(data_folder):
         dataset_url = 'https://trientran.github.io/images/mr-troy-fruits.zip'
         local_zip = 'mr-troy-fruits.zip'
-        urlretrieve(dataset_url, local_zip)
-        zip_ref = zipfile.ZipFile(local_zip, 'r')
+        urlretrieve(url=dataset_url, filename=local_zip)
+        zip_ref = zipfile.ZipFile(file=local_zip, mode='r')
         zip_ref.extractall('data/')
         zip_ref.close()
 
@@ -45,7 +45,7 @@ def multiclass_model():
 
     model = Sequential([
         # YOUR CODE HERE
-        Dense(3, activation='softmax')
+        Dense(units=3, activation='softmax')
     ])
 
     # Compile and fit data to the model
@@ -58,11 +58,11 @@ def multiclass_model():
 if __name__ == '__main__':
     # Run and save your model
     my_model = multiclass_model()
-    model_name = "multiclass_model.h5"
-    my_model.save(model_name)
+    filepath = "multiclass_rgb_model.h5"
+    my_model.save(filepath)
 
     # Reload the saved model
-    saved_model = load_model(model_name)
+    saved_model = load_model(filepath)
 
     # Show the model architecture
     saved_model.summary()

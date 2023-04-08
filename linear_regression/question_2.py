@@ -10,7 +10,7 @@
 # Your task is to fill in the missing parts of the regression_model function (where commented as "YOUR CODE HERE").
 
 import numpy as np
-import tensorflow as tf
+from keras import Sequential
 from keras.saving.save import load_model
 
 
@@ -20,7 +20,7 @@ def regression_model():
     y_array = np.array([-3.0, -1.0, 1.0, 3.0, 5.0, 7.0, 9.0], dtype=float)
 
     # Define the model architecture
-    model = tf.keras.Sequential([
+    model = Sequential([
         # YOUR CODE HERE
     ])
 
@@ -37,11 +37,11 @@ def regression_model():
 if __name__ == '__main__':
     # Run and save your model
     my_model = regression_model()
-    model_name = "regression_model_1.h5"
-    my_model.save(model_name)
+    filepath = "regression_model_2.h5"
+    my_model.save(filepath)
 
     # Reload the saved model
-    saved_model = load_model(model_name)
+    saved_model = load_model(filepath)
 
     # Show the model architecture
     saved_model.summary()

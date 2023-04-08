@@ -32,9 +32,9 @@ def multiclass_model():
     if not os.path.exists(data_folder):
         dataset_url = 'http://dl.dropboxusercontent.com/s/a32yc71tgfvfvku/mr-troy-fruits.zip'
         local_zip = 'mr-troy-fruits.zip'
-        urlretrieve(dataset_url, local_zip)
-        zip_ref = zipfile.ZipFile(local_zip, 'r')
-        zip_ref.extractall('temp/')
+        urlretrieve(url=dataset_url, filename=local_zip)
+        zip_ref = zipfile.ZipFile(file=local_zip, mode='r')
+        zip_ref.extractall(path='temp/')
         zip_ref.close()
 
     training_datagen = ImageDataGenerator(
@@ -51,7 +51,7 @@ def multiclass_model():
     img_size = (200, 200)
 
     train_generator = training_datagen.flow_from_directory(
-        data_folder,
+        directory=data_folder,
         target_size=img_size,
         batch_size=32,
         class_mode='categorical',
@@ -59,7 +59,7 @@ def multiclass_model():
     )
 
     validation_generator = training_datagen.flow_from_directory(
-        data_folder,
+        directory=data_folder,
         target_size=img_size,
         batch_size=32,
         class_mode='categorical',
@@ -67,18 +67,18 @@ def multiclass_model():
     )
 
     model = Sequential([
-        Conv2D(64, (3, 3), activation='relu', input_shape=(img_size[0], img_size[1], 3)),
-        MaxPooling2D(2, 2),
-        Conv2D(64, (3, 3), activation='relu'),
-        MaxPooling2D(2, 2),
-        Conv2D(128, (3, 3), activation='relu'),
-        MaxPooling2D(2, 2),
-        Conv2D(128, (3, 3), activation='relu'),
-        MaxPooling2D(2, 2),
+        Conv2D(filters=64, kernel_size=(3, 3), activation='relu', input_shape=(img_size[0], img_size[1], 3)),
+        MaxPooling2D(pool_size=(2, 2)),
+        Conv2D(filters=64, kernel_size=(3, 3), activation='relu'),
+        MaxPooling2D(pool_size=(2, 2)),
+        Conv2D(filters=128, kernel_size=(3, 3), activation='relu'),
+        MaxPooling2D(pool_size=(2, 2)),
+        Conv2D(filters=128, kernel_size=(3, 3), activation='relu'),
+        MaxPooling2D(pool_size=(2, 2)),
         Flatten(),
-        Dropout(0.5),
-        Dense(512, activation='relu'),
-        Dense(3, activation='softmax')  # 3 is the number of classes in the dataset.
+        Dropout(rate=0.5),
+        Dense(units=512, activation='relu'),
+        Dense(units=3, activation='softmax')  # 3 is the number of classes in the dataset.
     ])
 
     model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
@@ -86,7 +86,7 @@ def multiclass_model():
     # Define an early stopping callback
     early_stop = EarlyStopping(monitor='val_accuracy', patience=5, verbose=1, min_delta=0.01)
 
-    model.fit(train_generator, epochs=15, validation_data=validation_generator, callbacks=[early_stop])
+    model.fit(x=train_generator, epochs=15, validation_data=validation_generator, callbacks=[early_stop])
 
     return model
 
@@ -95,11 +95,11 @@ def multiclass_model():
 if __name__ == '__main__':
     # Run and save your model
     my_model = multiclass_model()
-    model_name = "multiclass_model.h5"
-    my_model.save(model_name)
+    filepath = "multiclass_rgb_model.h5"
+    my_model.save(filepath)
 
     # Reload the saved model
-    saved_model = load_model(model_name)
+    saved_model = load_model(filepath)
 
     # Show the model architecture
     saved_model.summary()

@@ -17,6 +17,6 @@ def regression_model():
     model.compile(optimizer='sgd', loss='mean_squared_error')
 
     # Train the model
-    model.fit(x_array, y_array, epochs=1000)
+    model.fit(x=x_array, y=y_array, epochs=1000)
 
     return model
