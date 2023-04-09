@@ -1,21 +1,21 @@
-- import libs accordingly
-- they dont mark how you code, they mark the output only with respect to the required input shape
-- set epoch to 10-20 for image classification problems and early callback patient to 3-5 so we know if our model is not performing well and fine-tune it
-- if you have to retrain the model, comment out the dataset downloading part to avoid redownloading
-- check Python packages tab, open Doucmentatoio tab if possible
-- in callback the mode is very important as it decide the logic to stop training
+- they dont really mark how you code, they mark only the output model (so, the first and last layers of the Sequential
+model need to be correctly defined)
+- you may want to set the number of epochs to only 10-20 for image classification problems and early callback patient to 3-5.
+ This will save us time if our model is not performing well and we need to fine-tune and retrain the model.
+- if your internet speed is not very fast, and you have to retrain an image classification model with a direct link to
+the dataset, it is best to comment out the dataset downloading part or add an if condition for re-downloading the dataset
+(like we did in this course) to avoid re-downloading the entire dataset. This saves you time as well.
+- remember to install the correct versions of the TF packages (via Preferences (Mac) or Settings (Windows))
+- try settings/preferences instead of Python packages tab if unable to install a certain package
+- try again if you failed to install the TensorFlow package in the first attempt
 - input shape is important and must match the required one
-- In general, the APIs of these two modules are very similar, and you can use either one to define a Sequential model in
-your code. Note that in the latest versions of TensorFlow, the tensorflow.python.keras module has been deprecated in favor of the
-standalone keras module, so you should use keras.models.Sequential instead of tensorflow.python.keras.models.Sequential
-for better compatibility with future versions of TensorFlow.
--  urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1108)>
-If you're using macOS go to Macintosh HD > Applications > Python3.6 folder (or whatever version of python you're using) > double click on "Install Certificates.command" file. :D
-- do not install the latest version of Pycharm yet due to incompatibility
-- install libs via Preferences not python packages tab
-- Try settings/preferences instead of Python packages tab if unable to install a certain package
-- Try again if failed to install the package in the first attempt
-- In windows, if ImportError: cannot import name '_no_nep50_warning' from 'numpy.core._ufunc_config' error, delete the current numpy version and install 1.23.0 version
-When dealing with JSON files, should declare :
-  with open(json_file, 'r', encoding='utf-8') as f:
-to avoid UnicodeDecodeError: 'charmap' codec can't decode byte 0x8d in position 2960: character maps to <undefined> error
+- do not install the latest version of Pycharm yet (even if the handbook advises you to do so) due to incompatibility.
+Recommended version by me: 2022.3.3 or older
+- in windows, if you see this error: ImportError: cannot import name '_no_nep50_warning' from 'numpy.core._ufunc_config' error, delete the
+current numpy version and install the 1.23.0 version
+- when dealing with JSON files, you should declare utf-8 encoding method like this: with open(json_file, 'r', encoding='utf-8') as f:
+This avoids UnicodeDecodeError: 'charmap' codec can't decode byte 0x8d in position 2960: character maps to <undefined> error
+- if you ever encounter an error like this in Mac computers: urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED]
+certificate verify failed: unable to get local issuer certificate (_ssl.c:1108)>, it just means you have not installed
+an SSL certificate. Solution: open Finder > Applications > Python3.8 folder (or whatever version of python required)
+> double click on "Install Certificates.command" file to install the certificate. The process should take only a couple of seconds.
