@@ -1,20 +1,24 @@
 - they dont really mark how you code, they mark only the output model (so, the first and last layers of the Sequential
 model need to be correctly defined)
+- input shape is important and must match the required one
 - you may want to set the number of epochs to only 10-20 for image classification problems and early callback patient to 3-5.
  This will save us time if our model is not performing well and we need to fine-tune and retrain the model.
 - if your internet speed is not very fast, and you have to retrain an image classification model with a direct link to
 the dataset, it is best to comment out the dataset downloading part or add an if condition for re-downloading the dataset
 (like we did in this course) to avoid re-downloading the entire dataset. This saves you time as well.
+
 - remember to install the correct versions of the TF packages (via Preferences (Mac) or Settings (Windows))
 - try settings/preferences instead of Python packages tab if unable to install a certain package
 - try again if you failed to install the TensorFlow package in the first attempt
-- input shape is important and must match the required one
 - do not install the latest version of Pycharm yet (even if the handbook advises you to do so) due to incompatibility.
 Recommended version by me: 2022.3.3 or older
-- in windows, if you see this error: ImportError: cannot import name '_no_nep50_warning' from 'numpy.core._ufunc_config' error, delete the
-current numpy version and install the 1.23.0 version
+
+- in windows, if you see this error when running your Python code: ImportError: cannot import name '_no_nep50_warning' from 'numpy.core._ufunc_config' error,
+delete the current numpy version and install the 1.23.0 version
+
 - when dealing with JSON files, you should declare utf-8 encoding method like this: with open(json_file, 'r', encoding='utf-8') as f:
 This avoids UnicodeDecodeError: 'charmap' codec can't decode byte 0x8d in position 2960: character maps to <undefined> error
+
 - if you ever encounter an error like this in Mac computers: urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED]
 certificate verify failed: unable to get local issuer certificate (_ssl.c:1108)>, it just means you have not installed
 an SSL certificate. Solution: open Finder > Applications > Python3.8 folder (or whatever version of python required)
